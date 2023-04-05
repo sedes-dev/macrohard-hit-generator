@@ -1152,5 +1152,30 @@ export const tracks: Track[] = [
         budget: 50000
       }
     }
+  },
+  {
+    title: 'Mała chinka',
+    artist: 'Funky Filon',
+    feat: 'córka dr Lubicza',
+    year: 2005,
+    ytId: '6G2OhwIUaM0',
+    properties: {
+      music: {
+        style: 'hiphopolo',
+        topic: 'deep',
+        featuring: ['singer'],
+        stolen: 'unknown',
+        swearLevel: 0,
+        rhymesLevel: 2
+      },
+      video: {
+        style: 'artistic',
+        location: 'other',
+        homiesLevel: 0,
+        hotGirlsLevel: 0,
+        carsLevel: 0,
+        budget: 0.01
+      }
+    }
   }
 ];
