@@ -1103,5 +1103,54 @@ export const tracks: Track[] = [
         budget: 200
       }
     }
+  },
+  {
+    title: 'Uciułany giecik',
+    artist: 'PCP',
+    year: 2004,
+    ytId: 'etV0SbPgSRQ',
+    properties: {
+      music: {
+        style: 'classic',
+        topic: 'drugs',
+        featuring: [],
+        stolen: 'unknown',
+        swearLevel: 3,
+        rhymesLevel: 7,
+      },
+      video: {
+        style: 'street',
+        location: 'neighborhood',
+        homiesLevel: 9,
+        hotGirlsLevel: 3,
+        carsLevel: 1,
+        budget: 10000
+      }
+    }
+  },
+  {
+    title: 'U ciebie w mieście',
+    artist: 'WWO',
+    feat: 'Vienio, Pele',
+    year: 2004,
+    ytId: 'XFCqP0tWTx8',
+    properties: {
+      music: {
+        style: 'classic',
+        topic: 'rap',
+        featuring: ['raper'],
+        stolen: 'unknown',
+        swearLevel: 3,
+        rhymesLevel: 6,
+      },
+      video: {
+        style: 'street',
+        location: 'other',
+        homiesLevel: 7,
+        hotGirlsLevel: 0,
+        carsLevel: 2,
+        budget: 50000
+      }
+    }
   }
 ];
