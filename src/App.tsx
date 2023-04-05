@@ -7,16 +7,39 @@ import { SelectList } from './components/SelectList';
 import { LoadingWindow } from './components/LoadingWindow';
 import { HelpWindow } from './components/HelpWindow';
 import { LevelSlider } from './components/LevelSlider';
+import { Error } from './components/Error';
 import { musicConfigState, setMusicConfigValue } from './app/slices/musicConfig';
 import { videoConfigState, setVideoConfigValue } from './app/slices/videoConfig';
 import { useAppSelector, useAppDispatch } from './app/hooks';
 import { MusicConfigParamName, MusicSelected, VideoConfigParamName, VideoSelected, CompletedConfig } from './types';
 import getTrackBasedOnConfig from './toolbox/getTrackBasedOnConfig';
 
+function validateConfig(config: CompletedConfig) {
+  let valid = true;
+  let subconfigName: keyof typeof config;
+
+  for (subconfigName in config) {
+    const subconfig = config[subconfigName];
+    let elementName: keyof typeof subconfig;
+
+    for (elementName in subconfig) {
+      if (subconfig[elementName] === undefined) {
+        valid = false;
+        break;
+      }
+    }
+
+    if (!valid) break;
+  }
+
+  return valid;
+}
+
 function App() {
   const [videoData, setVideoData] = useState<{title: string, ytId: string} | null>(null);
   const [showLoading, setShowLoading] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
+  const [showError, setShowError] = useState(false);
   const musicConfig = useAppSelector(musicConfigState);
   const videoConfig = useAppSelector(videoConfigState);
   const dispatch = useAppDispatch();
@@ -48,15 +71,20 @@ function App() {
       }
     };
 
-    const video = getTrackBasedOnConfig(completedConfig);
-    const title = `${video.artist}${video.feat ? ' (feat. ' + video.feat + ')' : ''} - ${video.title} (${video.year})`;
+    
+    if (validateConfig(completedConfig)) {
+      const video = getTrackBasedOnConfig(completedConfig);
+      const title = `${video.artist}${video.feat ? ' (feat. ' + video.feat + ')' : ''} - ${video.title} (${video.year})`;
 
-    setShowLoading(true);
+      setShowLoading(true);
 
-    setVideoData({
-      title,
-      ytId: video.ytId
-    })
+      setVideoData({
+        title,
+        ytId: video.ytId
+      })
+    } else {
+      setShowError(true);
+    }
   }
 
   const onMusicConfigValueChange = (name: MusicConfigParamName, selected: MusicSelected) => {
@@ -239,6 +267,9 @@ function App() {
       )}
       {showHelp && (
         <HelpWindow onClose={() => setShowHelp(false)}/>
+      )}
+      {showError && (
+        <Error onClose={() => setShowError(false)}/>
       )}
       {videoData && !showLoading && (
         <VideoWindow

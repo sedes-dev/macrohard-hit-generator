@@ -1,0 +1,13 @@
+.error {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  &__message {
+    width: 100%;
+  }
+
+  &__close {
+    margin-top: 5px;
+  }
+}
