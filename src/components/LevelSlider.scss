@@ -1,0 +1,12 @@
+.level-slider {
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+
+  &__field-row {
+    padding-bottom: 5px;
+  }
+}

@@ -1,0 +1,51 @@
+.app {
+  &__title,
+  &__subtitle {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+  }
+
+  &__row {
+    margin-bottom: 10px;
+
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__row-title {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+  }
+
+  &__subgroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 580px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 420px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

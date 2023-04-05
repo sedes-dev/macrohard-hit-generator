@@ -1,0 +1,22 @@
+.progress-bar {
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  height: 21px;
+  box-sizing: border-box;
+  padding: 3px 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+
+  &__bar {
+    width: 10px;
+    height: 100%;
+    background: navy;
+    margin-right: 2px;
+    flex: 0 0 auto;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

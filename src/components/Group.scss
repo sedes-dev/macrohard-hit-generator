@@ -1,0 +1,11 @@
+.group {
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__legend {
+    padding: 0 2px 0 4px;
+  }
+}

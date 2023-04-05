@@ -1,0 +1,43 @@
+@use '../variables/variables.scss';
+
+.window {
+  position: absolute;
+
+  @media screen and (max-width: 800px) {
+    max-width: 100%!important;
+
+    &:not(.window--main) {
+      position: fixed;
+      top: 50%!important;
+      left: 50%!important;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--main {
+    @media screen and (max-width: 800px) {
+      position: relative;
+      width: 100%!important;
+      height: auto!important;
+      top: 0!important;
+      left: 0!important;
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  .title-bar-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .window-body-no-spacing {
+    margin: 0;
+  }
+}
