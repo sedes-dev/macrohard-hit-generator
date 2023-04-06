@@ -23,8 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d ghpage",
-    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build && echo macrohard-hit-generator.sedes.dev > ./build/CNAME",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

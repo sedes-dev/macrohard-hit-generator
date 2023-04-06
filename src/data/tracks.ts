@@ -788,7 +788,7 @@ export const tracks: Track[] = [
     artist: 'Ośka',
     feat: 'Tede, Kołcz, Kiełbasa',
     year: 2004,
-    ytId: '_Fuw3QVBKM',
+    ytId: '82MYQGoRAb0',
     properties: {
       music: {
         style: 'bounce',
