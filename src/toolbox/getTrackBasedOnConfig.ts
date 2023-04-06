@@ -1,6 +1,8 @@
 import { tracks } from "../data/tracks";
 import { CompletedConfig, TrackWithScore } from "../types";
 
+const lastTracks: string[] = [];
+
 export default function getTrackBasedOnConfig(config: CompletedConfig) {
   const tracksWithScore: TrackWithScore[] = tracks.map(track => {
     let score = 0;
@@ -45,17 +47,22 @@ export default function getTrackBasedOnConfig(config: CompletedConfig) {
       ytId: track.ytId,
       score
     };
-  }).sort((track1, track2) => {
+  })
+  .filter(track => !lastTracks.includes(track.ytId))
+  .sort((track1, track2) => {
     if (track1.score < track2.score) return 1;
     if (track1.score > track2.score) return -1;
     return 0;
-  })
-
-  console.log(tracksWithScore);
+  });
 
   const topScore = tracksWithScore[0].score;
 
   const tracksWithTopScore = tracksWithScore.filter(track => track.score === topScore);
 
-  return tracksWithTopScore[Math.round(Math.random() * (tracksWithTopScore.length - 1))];
+  const track = tracksWithTopScore[Math.round(Math.random() * (tracksWithTopScore.length - 1))];
+
+  if (lastTracks.length === 10) lastTracks.shift();
+  lastTracks.push(track.ytId);
+
+  return track
 }
