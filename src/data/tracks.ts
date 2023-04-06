@@ -1177,5 +1177,79 @@ export const tracks: Track[] = [
         budget: 0.01
       }
     }
+  },
+  {
+    title: 'Ten Typ',
+    artist: 'Red',
+    feat: 'Ten Typ Mes',
+    year: 2002,
+    ytId: 'Eo_47SHlpWk',
+    properties: {
+      music: {
+        style: 'bounce',
+        topic: 'rap',
+        featuring: ['raper'],
+        stolen: 'unknown',
+        swearLevel: 1,
+        rhymesLevel: 7
+      },
+      video: {
+        style: 'simple',
+        location: 'car',
+        homiesLevel: 3,
+        hotGirlsLevel: 3,
+        carsLevel: 3,
+        budget: 2300
+      }
+    }
+  },
+  {
+    title: 'PDG',
+    artist: 'donGuralesko',
+    feat: 'Sheller, Qlop, Koni, Buba, Don Tomalone, Kaczor, Rafi, Szpaku',
+    year: 2002,
+    ytId: 'Di904opHmy0',
+    properties: {
+      music: {
+        style: 'classic',
+        topic: 'rap',
+        featuring: ['raper'],
+        stolen: 'unknown',
+        swearLevel: 5,
+        rhymesLevel: 6
+      },
+      video: {
+        style: 'simple',
+        location: 'neighborhood',
+        homiesLevel: 9,
+        hotGirlsLevel: 0,
+        carsLevel: 0,
+        budget: 12302
+      }
+    },
+  },
+  {
+    title: 'To jest to',
+    artist: 'Hemp Gru',
+    year: 2002,
+    ytId: '_UVku05qk4E',
+    properties: {
+      music: {
+        style: 'classic',
+        topic: 'rap',
+        featuring: [],
+        stolen: 'unknown',
+        swearLevel: 4,
+        rhymesLevel: 6
+      },
+      video: {
+        style: 'street',
+        location: 'neighborhood',
+        homiesLevel: 9,
+        carsLevel: 7,
+        hotGirlsLevel: 1,
+        budget: 1000
+      }
+    }
   }
 ];
